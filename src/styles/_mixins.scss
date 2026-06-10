@@ -1,0 +1,29 @@
+:root {
+  --color-key: #e60302;
+  --color-accent1: #001EFF;
+  --color-accent2: #007C06;
+  --color-accent3: #42b883;
+}
+// 斜め光源によるレリーフ風フレーム
+// $size  : 影のサイズ（ボーダー幅は $size * 2 になる）
+// $color : ボーダーカラー
+@mixin decorative-frame($size, $color: 0) {
+
+  @if $color != 0 {
+    box-shadow:
+      $size (-$size) $size 0 #0008,
+      $size (-$size) $size 0 #0008 inset,
+      (-$size) $size $size 0 #fff5,
+      (-$size) $size $size 0 #fffa inset,
+      0 0 0 ($size * 2) $color,
+      0 0 0 ($size * 2) $color inset;
+  }
+
+  @else {
+    box-shadow:
+      $size (-$size) $size 0 #0008,
+      $size (-$size) $size 0 #0008 inset,
+      (-$size) $size $size 0 #fff5,
+      (-$size) $size $size 0 #fffa inset;
+  }
+}

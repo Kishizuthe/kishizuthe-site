@@ -1,0 +1,52 @@
+@use 'mixins' as *;
+
+.l-wrapper {
+  width: 720px;
+  box-sizing: content-box;
+  margin: 20px auto 5px;
+  padding: 12px;
+  border-radius: 58px;
+  @include decorative-frame(6px, var(--color-key));
+}
+
+.l-container {
+  position: relative;
+  text-align: left;
+}
+
+.l-banner {
+  overflow: hidden;
+  border-radius: 40px 40px 0 0;
+  aspect-ratio: 720/306;
+}
+
+.l-main {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.l-footer {
+  width: 760px;
+  height: 53px;
+  margin: 0 auto;
+}
+
+.l-foot-nav {
+  margin-top: 54px;
+  text-align: center;
+  font-size: 10px;
+  text-decoration: none;
+
+  a {
+    color: #ff0000;
+    text-decoration: none;
+
+    &:hover {
+      color: #ffffff;
+      text-decoration: none;
+      background: #ff0000;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@use '../styles/mixins' as *;
+
+.p-home {
+  $this: &;
+
+  &__updates {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 1rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.9rem;
+
+    dt {
+      color: #888;
+      white-space: nowrap;
+    }
+  }
+
+  &__latestGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  &__latestItem {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover #{$this}__latestImg {
+      opacity: 0.8;
+    }
+  }
+
+  &__latestImg {
+    position: relative;
+    display: block;
+    border-radius: 100%;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      width: 23%;
+      aspect-ratio: 1/1.5;
+      background-color: #fff7;
+      z-index: 1;
+      content: "";
+      top: 12%;
+      left: 16%;
+      border-radius: 100%;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      $size: 2.5px;
+      display: block;
+      border-radius: 100%;
+      @include decorative-frame($size, #ff0000);
+      padding: #{$size * 2};
+      margin: #{$size * 2};
+    }
+    
+    img {
+      border-radius: 100%;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;      
+      transition: 0.2s ease-out transform, opacity 0.2s;
+
+      #{$this}__latestItem:hover & {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__latestLabel {
+    font-size: 0.75rem;
+    color: #666;
+    padding-top: 1em;
+    text-align: center;
+  }
+}
