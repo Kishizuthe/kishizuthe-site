@@ -60,7 +60,7 @@ export default function SpotMap() {
     if (error) return <p>エラー: {error}</p>
 
     // ホバー中のスポットを取得
-    const hoveredSpot = spots.find((s) => s.id === hoveredId)
+    // const hoveredSpot = spots.find((s) => s.id === hoveredId)
 
     return (
         <>
@@ -86,8 +86,9 @@ export default function SpotMap() {
                     mouseout: () => setHoveredId(null),
                     }}
                 >
-                    <Popup>{spot.name}
-                        <ul style={{ padding: 0, listStyle: 'none' }}>
+                    <Popup>
+                        <p className='leaflet-popup-content__spotName'>{spot.name}</p>
+                        <ul className='leaflet-popup-content__spotNoteList'>
                             {parseUrls(spot.urlList).map((url) => (
                                 <li key={url}>
                                 <a href={url} target="_blank" rel="noopener noreferrer">

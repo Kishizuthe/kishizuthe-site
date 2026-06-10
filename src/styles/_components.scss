@@ -53,7 +53,6 @@
   }
 
   &__inner {
-    border-radius: 30px;
     overflow: hidden;
     margin: 0 40px 35px;
     padding: 0;
@@ -72,19 +71,7 @@
         color: #ff0000;
         text-decoration: none;
       }
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      margin: 0 0 10px 0;
-      padding: 0 0 10px 0;
-      clear: both;
-    }
+    }    
 
     dl {
       margin: 0 0 5px 0;
@@ -113,10 +100,36 @@
     }
     #{$this}__inner {
       margin: 0 6px 6px;
+      border-radius: 30px;
     }
   }
 }
 
-.list p {
-  margin: 0;
+.leaflet-popup-content {
+
+  &__spotName {
+    margin: 0!important;
+  
+    &::before {
+      content: "";
+      border-radius: 0.3em;
+      width: 0.4em;
+      height: 1.2em;
+      margin-right: 0.4em;
+      vertical-align: text-bottom;
+      display: inline-block;
+      background-color: var(--color-accent2);
+    }
+  }
+  
+  &__spotNoteList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+    li {
+      margin-top: 0.5em;
+    }
+  }
 }
+
