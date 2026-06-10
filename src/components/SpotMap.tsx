@@ -20,7 +20,6 @@ export default function SpotMap() {
 
     // useStateで「スポット一覧」と「ホバー中のスポットID」を管理
     const [spots, setSpots] = useState<Spot[]>([])
-    const [hoveredId, setHoveredId] = useState<string | null>(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState<string | null>(null)
 
@@ -81,10 +80,6 @@ export default function SpotMap() {
                 <Marker
                     key={spot.id}
                     position={parseCoordinates(spot.coordinates)}
-                    eventHandlers={{
-                    mouseover: () => setHoveredId(spot.id),
-                    mouseout: () => setHoveredId(null),
-                    }}
                 >
                     <Popup>
                         <p className='leaflet-popup-content__spotName'>{spot.name}</p>

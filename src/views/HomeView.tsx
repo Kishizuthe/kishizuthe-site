@@ -21,7 +21,7 @@ const sources = [
 
 // 各カテゴリから最新2件の先頭画像を取得
 const latestItems = sources.flatMap(({ data, path, label }) =>
-  data.slice(0, 1).map((item) => ({
+  data.slice(0, 1).map((item: { images: string[] }) => ({
     image: item.images[0],
     path,
     label,
