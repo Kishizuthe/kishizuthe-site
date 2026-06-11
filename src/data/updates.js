@@ -7,7 +7,7 @@ export default [
   },
   {
     date: '2010-04-10',
-    text: '相互リンク一件追加しました。',
+    text: '相互リンク一件追加',
     link: '/link',
   },
   {

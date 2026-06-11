@@ -34,7 +34,7 @@ export default function HomeView () {
       <h2 className="m-pageTitle">HOME</h2>
 
       <p className="m-pageDescription">
-        都内某所にて起居し、何だかよく分からないことをしている40代前半男が描いたイラストをメインに、トイカメラやデジカメの写真を掲載しています。
+        18年ほど前に作った個人サイトを雰囲気を残しつつ改修・React化。ファイル構成なども整理中。思いつきの実験などをしていく予定。
       </p>
 
       <section className='m-contents m-contents--map'>
