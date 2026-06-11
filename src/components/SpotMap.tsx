@@ -29,7 +29,7 @@ export default function SpotMap() {
         const fetchSpots = async () => {
             try {
                 const res = await fetch(
-                    `${import.meta.env.VITE_MICROCMS_BASE_URL}/spots`,
+                    `${import.meta.env.VITE_MICROCMS_BASE_URL}/spots?limit=100`,
                     { headers: { 'X-MICROCMS-API-KEY': import.meta.env.VITE_MICROCMS_API_KEY } }
                 )
                 if (!res.ok) throw new Error('APIの取得に失敗しました')
